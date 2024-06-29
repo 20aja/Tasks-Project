@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    font-family: "Cairo", sans-serif;
+}
+
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #123;
+    color: #123;
+    direction: rtl;
+}
+.container{
+    width: 70%;
+    margin: 0 auto;
+    background-image: url(../back.png);
+    background-size: cover;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+.container h1{
+    margin-bottom:10px;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+}
+hr{
+    background-color: #123;
+    width: 100%;
+    height: 2px;
+}
+.container .input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin: 15px auto;
+}
+.input-box input{
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border: #123 solid 1px;
+    border-radius: 5px;
+}
+input::placeholder:first-child{
+    color: #5e5e5e;
+}
+.head button{
+    padding: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #123;
+    border: #123 solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+.head button:hover{
+    background-color: #123;
+    color: #fff;
+}
+.show{
+    margin: 0 8px;
+    overflow-y: auto;
+}
+.tasks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ececec;
+    padding-right:15px;
+    box-shadow: 0 4px 3px #5e5e5e;
+    margin:10px 0;
+    min-height: 70px;
+}
+#done{
+    background-color: greenyellow;
+}
+.task{
+    width: 50%;
+    width: 75%;
+}
+.tasks .task h3{
+    font-size: 20px;
+}
+.action{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 35%;
+}
+.tasks .action button{
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #123;
+    color: #fff;
+}
+.tasks .action button i{
+    padding: 14px;
+    font-size: 15px;
+}
+.tasks .action button:first-child{
+    background-color: #a02525;
+}
+.tasks .action button:last-child{
+    background-color: #094f96;
+}
+
+/* small  */
+@media (max-width: 550px){
+    .container{
+        width: 90%;
+        height: 70%;
+    }
+    .action{
+        width: 50%;
+        gap: 5px;
+    }
+    .tasks .task h3{
+        font-size: 15px;
+    }
+    .tasks .task p{
+        font-size: 10px;
+    }
+    .tasks .action button i{
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+/* medium  */
+@media (min-width: 551px) and (max-width: 990px){
+    .container{
+        width: 90%;
+        height: 80%;
+    }
+}
+/* large  */
+@media (min-width: 991px){
+    .container{
+        width: 60%;
+        height: 80%;
+    }
+}
