@@ -1,5 +1,4 @@
 let taskName = document.getElementById("name");
-let taskDate = document.getElementById("date");
 let show = document.querySelector(".show");
 let submit = document.getElementById("add");
 let tasks = document.querySelector(".tasks");
@@ -14,18 +13,17 @@ if (localStorage.MyTasks != null) {
 }
 // create task
 submit.addEventListener("click", function () {
-  if (taskName.value != "" && taskDate.value != "") {
+  if (taskName.value != "") {
     if (mood === "create") {
       let newObj = {
         name: taskName.value,
-        date: taskDate.value,
+        date:new Date(),
         isdone: false,
       };
       allTasks.push(newObj);
       localStorage.setItem("MyTasks", JSON.stringify(allTasks));
     } else {
       allTasks[second].name = taskName.value;
-      allTasks[second].date = taskDate.value;
       localStorage.MyTasks = JSON.stringify(allTasks);
       mood = "create";
       submit.innerHTML = "إضافة";
@@ -77,7 +75,6 @@ function deleteTask(i) {
 //Update Tasks
 function updateTask(i) {
   taskName.value = allTasks[i].name;
-  taskDate.value = allTasks[i].date;
   submit.innerHTML = "تعديل";
   mood = "update";
   second = i;
@@ -85,7 +82,6 @@ function updateTask(i) {
 // clear data
 function cleardata() {
   taskName.value = "";
-  taskDate.value = "";
 }
 
 // Checking Tasks
