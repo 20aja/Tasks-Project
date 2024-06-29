@@ -121,7 +121,7 @@ input::placeholder:first-child{
 @media (max-width: 550px){
     .container{
         width: 90%;
-        height: 70%;
+        height: 90%;
     }
     .action{
         width: 50%;
